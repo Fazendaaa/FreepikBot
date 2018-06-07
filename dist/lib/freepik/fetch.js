@@ -11,11 +11,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const freepik_scrapping_1 = require("freepik-scrapping");
 const freepikToFetchResponse = ({ url, title, tags, is_free, thumb_url, download_url, creator_profile, translate }) => {
     const option = (true === is_free) ? 'free' : 'paid';
+    const parsedTags = tags.join(', ');
     return {
         title,
         thumb_url,
-        description: tags.join(', '),
-        message_text: translate.t('mask', { url, title, thumb_url, download_url, creator_profile, free: translate.t(option) })
+        description: parsedTags,
+        message_text: translate.t('mask', { url, title, thumb_url, download_url, creator_profile, free: translate.t(option), tags: parsedTags })
     };
 };
 const curryFreepikToFetchResponse = ({ translate }) => ((remaining) => freepikToFetchResponse(Object.assign({ translate }, remaining)));

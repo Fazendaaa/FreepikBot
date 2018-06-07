@@ -25,10 +25,9 @@ paid:
 
 mask:
   "[\u200B](${thumb_url})\
-  [${title}](${thumb_url})\n\n\
+  [${title}](${url})\n\n\
   *Tags*: _${tags}_\n\
   *Option*: _${free}_\n\
-  *Freepik link*: _${url}\n\
   *Creator*: _[Profile](${creator_profile})_\n\
   *Download*: [Click here!](${download_url})\n"
 
