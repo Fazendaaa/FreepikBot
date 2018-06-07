@@ -1,0 +1,31 @@
+{
+  "name": "FreepikBot",
+  "version": "1.0.0",
+  "description": "A friendly bot that searches the Freepink website content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fazendaaa/FreepikBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fazendaaa/FreepikBot/issues"
+  },
+  "homepage": "https://github.com/Fazendaaa/FreepikBot#readme",
+  "devDependencies": {
+    "coveralls": "^3.0.1",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "freepik-scrapping": "^1.0.0"
+  }
+}
