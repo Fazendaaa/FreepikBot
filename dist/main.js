@@ -38,7 +38,9 @@ bot.command('about', ({ i18n, replyWithMarkdown }) => {
 });
 bot.on('inline_query', ({ i18n, answerInlineQuery, inlineQuery }) => __awaiter(this, void 0, void 0, function* () {
     const message = parse_2.messageToString({ message: inlineQuery.query });
-    const results = yield fetch_1.fetchFreepik({ message, translate: i18n, page: parseInt(inlineQuery.id, 10) });
-    answerInlineQuery(parse_1.toInline(results));
+    const offset = parseInt(inlineQuery.id, 10);
+    const paginationLimit = 20;
+    const results = yield fetch_1.fetchFreepik({ message, translate: i18n, page: offset });
+    answerInlineQuery(parse_1.toInline(results), { next_offset: offset + paginationLimit });
 }));
 //# sourceMappingURL=main.js.map

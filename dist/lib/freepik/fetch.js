@@ -21,8 +21,15 @@ const freepikToFetchResponse = ({ url, title, tags, is_free, thumb_url, download
 };
 const curryFreepikToFetchResponse = ({ translate }) => ((remaining) => freepikToFetchResponse(Object.assign({ translate }, remaining)));
 const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0, void 0, function* () {
+    const limit = 40;
+    const truncate = Math.trunc(page / limit);
+    const pageNumber = truncate + 1;
+    const slice = 20;
+    const mod = page % slice;
+    const start = mod * 20;
+    const end = (mod + 1) * 20;
     try {
-        const searched = yield freepik_scrapping_1.searchFreepik({ term: message, page });
+        const searched = yield freepik_scrapping_1.searchFreepik({ term: message, page: pageNumber });
         const curriedMask = curryFreepikToFetchResponse({ translate });
         if (0 === searched.length) {
             return [{
@@ -32,7 +39,7 @@ const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0,
                     message_text: translate.t('notFoundMessageText')
                 }];
         }
-        return searched.slice(0, 10).map(curriedMask);
+        return searched.slice(start, end).map(curriedMask);
     }
     catch (e) {
         console.error(e);
