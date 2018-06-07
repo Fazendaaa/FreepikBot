@@ -31,7 +31,7 @@ const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0,
     try {
         const searched = yield freepik_scrapping_1.searchFreepik({ term: message, page: pageNumber });
         const curriedMask = curryFreepikToFetchResponse({ translate });
-        if (0 === searched.length) {
+        if (0 === searched.length && 1 === pageNumber) {
             return [{
                     title: translate.t('notFoundTitle'),
                     description: translate.t('notFoundDescription'),
