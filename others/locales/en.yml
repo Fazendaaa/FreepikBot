@@ -28,7 +28,7 @@ mask:
   [${title}](${url})\n\n\
   *Tags*: _${tags}_\n\
   *Option*: _${free}_\n\
-  *Creator*: _[Profile](${creator_profile})_\n\
+  *Creator*: [Profile](${creator_profile})\n\
   *Download*: [Click here!](${download_url})\n"
 
 emptyTitle:
