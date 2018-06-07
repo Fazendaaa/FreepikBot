@@ -23,6 +23,8 @@ const searchAndParse = async({ message, translate, page }: FetchContext): Promis
         const searched = <Array<FreepikElement>> await searchFreepik({ term: message, page });
         const curriedMask = curryFreepikToFetchResponse({ translate });
 
+        console.log(searched);
+
         if (0 === searched.length) {
             return [{
                 title: translate.t('notFoundTitle'),
@@ -34,6 +36,8 @@ const searchAndParse = async({ message, translate, page }: FetchContext): Promis
 
         return searched.map(curriedMask);
     } catch (e) {
+        console.error(e);
+
         return [{
             title: translate.t('errorTitle'),
             description: translate.t('errorDescription'),

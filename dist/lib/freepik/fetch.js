@@ -23,6 +23,7 @@ const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0,
     try {
         const searched = yield freepik_scrapping_1.searchFreepik({ term: message, page });
         const curriedMask = curryFreepikToFetchResponse({ translate });
+        console.log(searched);
         if (0 === searched.length) {
             return [{
                     title: translate.t('notFoundTitle'),
@@ -34,6 +35,7 @@ const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0,
         return searched.map(curriedMask);
     }
     catch (e) {
+        console.error(e);
         return [{
                 title: translate.t('errorTitle'),
                 description: translate.t('errorDescription'),
