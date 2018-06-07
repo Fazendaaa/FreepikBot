@@ -24,9 +24,11 @@ paid:
   "pago"
 
 mask:
-  "[\u200B](https://i.imgur.com/43iRyzh.jpg)*Link*: [${title}](${url})\n\n\
-  *Descrição*: _${description}_\n\n\
-  *Palavras-chaves*: _${tags}_\n"
+  "[\u200B](${thumb_url})[${title}](${url})\n\n\
+  *Palavras-chaves*: _${tags}_\n\
+  *Opção*: _${free}_\n\
+  *Criador*: _[Perfil](${creator_profile})_\n\
+  *Download*: [Clique aqui!](${download_url})\n\"
 
 emptyTitle:
   "Digite alguma coisa"

@@ -15,7 +15,7 @@ const freepikToFetchResponse = ({ url, title, tags, is_free, thumb_url, download
         title,
         thumb_url,
         description: tags.join(', '),
-        message_text: translate.t('mask', { title, download_url, creator_profile, free: translate.t(option) })
+        message_text: translate.t('mask', { title, thumb_url, download_url, creator_profile, free: translate.t(option) })
     };
 };
 const curryFreepikToFetchResponse = ({ translate }) => ((remaining) => freepikToFetchResponse(Object.assign({ translate }, remaining)));
@@ -23,7 +23,6 @@ const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0,
     try {
         const searched = yield freepik_scrapping_1.searchFreepik({ term: message, page });
         const curriedMask = curryFreepikToFetchResponse({ translate });
-        console.log(searched);
         if (0 === searched.length) {
             return [{
                     title: translate.t('notFoundTitle'),

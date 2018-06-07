@@ -24,9 +24,11 @@ paid:
   "paid"
 
 mask:
-  "[\u200B](https://i.imgur.com/43iRyzh.jpg)*Link*: [${title}](${url})\n\n\
-  *Description*: _${description}_\n\n\
-  *Tags*: _${tags}_\n"
+  "[\u200B](${thumb_url})[${title}](${url})\n\n\
+  *Tags*: _${tags}_\n\
+  *Option*: _${free}_\n\
+  *Creator*: _[Profile](${creator_profile})_\n\
+  *Download*: [Click here!](${download_url})\n\"
 
 emptyTitle:
   "Type anything"
