@@ -38,12 +38,12 @@ bot.command('about', ({ i18n, replyWithMarkdown }) => {
 });
 bot.on('inline_query', ({ i18n, answerInlineQuery, inlineQuery }) => __awaiter(this, void 0, void 0, function* () {
     const message = parse_2.messageToString({ message: inlineQuery.query });
-    const paginationLimit = 20;
-    const offset = parseInt(inlineQuery.offset, 10);
-    const start = offset % paginationLimit;
-    const end = (start + 1) * paginationLimit;
-    const page = (offset % 40) + 1;
+    const offset = parseInt(inlineQuery.offset, 10) || 0;
+    const page = Math.trunc(offset / 40) + 1;
     const results = yield fetch_1.fetchFreepik({ message, translate: i18n, page });
+    const paginationLimit = 20;
+    const start = Math.trunc(offset / paginationLimit);
+    const end = (start + 1) * paginationLimit;
     const response = results.slice(start, end);
     answerInlineQuery(parse_1.toInline(response), { next_offset: offset + paginationLimit });
 }));
