@@ -7,15 +7,13 @@ import { FetchContext, FetchResponse, FreepikToResponseContext } from './index';
 
 const freepikToFetchResponse = ({ url, title, tags, is_free, thumb_url, download_url, creator_profile, translate }: FreepikToResponseContext): FetchResponse => {
     const option = (true === is_free) ? 'free' : 'paid';
-    const parsedTags = tags.join(', ');
-
-    console.log(tags);
+    const parsedTags = tags.slice(0, 5).join(',');
 
     return {
         title,
         thumb_url,
         description: parsedTags,
-        message_text: translate.t('mask', { url, title, thumb_url, download_url, creator_profile, free: translate.t(option), tags: 'parsedTags' })
+        message_text: translate.t('mask', { url, title, thumb_url, download_url, creator_profile, free: translate.t(option), tags: parsedTags })
     };
 };
 
