@@ -32,7 +32,7 @@ const searchAndParse = ({ message, translate, page }) => __awaiter(this, void 0,
                     message_text: translate.t('notFoundMessageText')
                 }];
         }
-        return searched.map(curriedMask);
+        return searched.slice(0, 10).map(curriedMask);
     }
     catch (e) {
         console.error(e);

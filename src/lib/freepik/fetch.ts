@@ -33,7 +33,7 @@ const searchAndParse = async({ message, translate, page }: FetchContext): Promis
             }];
         }
 
-        return searched.map(curriedMask);
+        return searched.slice(0, 10).map(curriedMask);
     } catch (e) {
         console.error(e);
 
