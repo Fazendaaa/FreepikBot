@@ -1,31 +1,49 @@
 {
   "name": "FreepikBot",
   "version": "1.0.0",
-  "description": "A friendly bot that searches the Freepink website content.",
-  "main": "index.js",
+  "description": "A friendly bot that searches the freepik website content.",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && npm run bot",
+    "bot": "node dist/main.js",
+    "test": "jest --config jest.config.json --ci --runInBand",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "validate": "node node_modules/app.json/index.js validate"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fazendaaa/FreepikBot.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "bot",
+    "telegram",
+    "freepik",
+    "art",
+    "search"
+  ],
+  "author": "https://github.com/Fazendaaa",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Fazendaaa/FreepikBot/issues"
   },
   "homepage": "https://github.com/Fazendaaa/FreepikBot#readme",
   "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "app.json": "^1.3.0",
     "coveralls": "^3.0.1",
     "jest": "^23.1.0",
+    "telegram-typings": "^3.6.1",
     "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "tslint-microsoft-contrib": "^5.0.3",
     "typescript": "^2.9.1"
   },
   "dependencies": {
-    "freepik-scrapping": "^1.0.0"
+    "dotenv": "^6.0.0",
+    "freepik-scrapping": "^1.2.0",
+    "remove-accents": "^0.4.2",
+    "telegraf": "^3.21.2",
+    "telegraf-i18n": "^6.1.1"
   }
 }

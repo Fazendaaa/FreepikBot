@@ -1,0 +1,56 @@
+start:
+  "Por favor, me use no modo inline para pesquisar conteúdo no Freepik"
+
+help1:
+  "Eu sou apenas uma maneira para pesquisar conteúdo do Freepik. Deixe-me mostrar para você:"
+
+help2:
+  "Para saber mais basta dar um /about"
+
+about:
+  "Veja o código por trás em:
+  🤖 [Meu site](https://fazendaaa.github.io/FreepikBot/) -- Veja como eu funciono.\n\
+  😀 [Site do meu criador](http://fazendaaa.me) — Veja outros bots parecidos.\n\n\
+  Ou até mesmo considere ajudar a me manter no ar:\n\
+  ☕ [Buy me a coffee](https://www.buymeacoffee.com/Fazenda) — Doação de uma vez.\n\
+  📅 [Patreon](https://www.patreon.com/Fazenda/overview) — Assinatura.\n\n\
+  Tem alguma sugestão, erros para reportar ou até mesmo requisição de uma tradução para o bot?\n\
+  Sinta-se a vontade para reportar para: @farmy."
+
+free:
+  "gratuito"
+
+paid:
+  "pago"
+
+mask:
+  "[\u200B](https://i.imgur.com/43iRyzh.jpg)*Link*: [${title}](${url})\n\n\
+  *Descrição*: _${description}_\n\n\
+  *Palavras-chaves*: _${tags}_\n"
+
+emptyTitle:
+  "Digite alguma coisa"
+
+emptyDescription:
+  "Digite o que gostaria de pesquisar no Freepik"
+
+emptyMessageText:
+  "Eu não sou uma pesquisa, apenas um auxiliar. Click nos outros resultados para ver mais sobre."
+
+notFoundTitle:
+  "Nada encontrado"
+
+notFoundDescription:
+  "Eu não encontrei nada relacionado ao que desejas pesquisar."
+
+notFoundMessageText:
+  "Eu não encontrei nada relacionado ao que desejas pesquisar."
+
+errorTitle:
+  "Erro"
+
+errorDescription:
+  "Um erro ocorreu, por favor avise @farmy sobre isto."
+
+errorMessageText:
+  "Um erro ocorreu, por favor avise @farmy sobre isto."

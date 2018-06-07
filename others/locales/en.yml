@@ -1,0 +1,56 @@
+start:
+  "Please, use me as a inline tool to search Freepik content"
+
+help1:
+  "I'm just a wrapper for you to sent Freepik links in groups. Let me show it to you:"
+
+help2:
+  "To know more, just /about"
+
+about:
+  "See the code behind me at:\n\
+  🤖 [My website](https://fazendaaa.github.io/FreepikBot/) -- See how I work.\n\
+  😀 [Creator's website](http://fazendaaa.me) — Check it out some other bots.\n\n\
+  Or even consider it supporting my creator:\n\
+  ☕ [Buy me a coffee](https://www.buymeacoffee.com/Fazenda) — One time only.\n\
+  📅 [Patreon](https://www.patreon.com/Fazenda/overview) — Subscription.\n\n\
+  Has any suggestions, errors to report it or even request a translation?\n\
+  Fell free to tell at: @farmy."
+
+free:
+  "free"
+
+paid:
+  "paid"
+
+mask:
+  "[\u200B](https://i.imgur.com/43iRyzh.jpg)*Link*: [${title}](${url})\n\n\
+  *Description*: _${description}_\n\n\
+  *Tags*: _${tags}_\n"
+
+emptyTitle:
+  "Type anything"
+
+emptyDescription:
+  "Search here what you want"
+
+emptyMessageText:
+  "I'm not a content, just a helper. Click the others results to see more."
+
+notFoundTitle:
+  "Not found"
+
+notFoundDescription:
+  "I haven't found anything related."
+
+notFoundMessageText:
+  "I haven't found anything related."
+
+errorTitle:
+  "Error"
+
+errorDescription:
+  "An error happen, please warn @farmy about it."
+
+errorMessageText:
+  "An error happen, please warn @farmy about it."
