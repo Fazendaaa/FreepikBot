@@ -47,7 +47,7 @@ bot.on('inline_query', async ({ i18n, answerInlineQuery, inlineQuery }) => {
     const message = messageToString({ message: inlineQuery.query });
 
     const paginationLimit = 20;
-    const offset = parseInt(inlineQuery.id, 10);
+    const offset = parseInt(inlineQuery.offset, 10);
     const start = offset % paginationLimit;
     const end = (start + 1) * paginationLimit;
     const page = (offset % 40) + 1;
