@@ -12,7 +12,7 @@ const freepikToFetchResponse = ({ url, title, tags, is_free, thumb_url, download
         title,
         thumb_url,
         description: tags.join(', '),
-        message_text: translate.t('mask', { title, thumb_url, download_url, creator_profile, free: translate.t(option) })
+        message_text: translate.t('mask', { url, title, thumb_url, download_url, creator_profile, free: translate.t(option) })
     };
 };
 
