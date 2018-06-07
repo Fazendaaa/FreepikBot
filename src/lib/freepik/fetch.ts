@@ -20,20 +20,11 @@ const freepikToFetchResponse = ({ url, title, tags, is_free, thumb_url, download
 const curryFreepikToFetchResponse = ({ translate }) => ((remaining) => freepikToFetchResponse({ translate, ...remaining }));
 
 const searchAndParse = async({ message, translate, page }: FetchContext): Promise<Array<FetchResponse>> => {
-    const limit = 40;
-    const truncate = Math.trunc(page / limit);
-    const pageNumber = truncate + 1;
-
-    const slice = 20;
-    const mod = page % slice;
-    const start = mod * 20;
-    const end = (mod + 1) * 20;
-
     try {
-        const searched = <Array<FreepikElement>>await searchFreepik({ term: message, page: pageNumber });
+        const searched = <Array<FreepikElement>>await searchFreepik({ term: message, page });
         const curriedMask = curryFreepikToFetchResponse({ translate });
 
-        if (0 === searched.length && 1 === pageNumber) {
+        if (0 === searched.length) {
             return [{
                 title: translate.t('notFoundTitle'),
                 description: translate.t('notFoundDescription'),
@@ -42,7 +33,7 @@ const searchAndParse = async({ message, translate, page }: FetchContext): Promis
             }];
         }
 
-        return searched.slice(start, end).map(curriedMask);
+        return searched.map(curriedMask);
     } catch (e) {
         console.error(e);
 

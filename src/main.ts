@@ -48,6 +48,7 @@ bot.on('inline_query', async ({ i18n, answerInlineQuery, inlineQuery }) => {
     const offset = parseInt(inlineQuery.id, 10);
     const paginationLimit = 20;
     const results = await fetchFreepik({ message, translate: i18n, page: offset });
+    const response = results.slice(offset, (offset + 1) * paginationLimit);
 
-    answerInlineQuery(toInline(results), { next_offset: offset + paginationLimit});
+    answerInlineQuery(toInline(response), { next_offset: offset + paginationLimit });
 });
