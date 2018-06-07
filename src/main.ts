@@ -45,10 +45,14 @@ bot.command('about', ({ i18n, replyWithMarkdown }) => {
 
 bot.on('inline_query', async ({ i18n, answerInlineQuery, inlineQuery }) => {
     const message = messageToString({ message: inlineQuery.query });
-    const offset = parseInt(inlineQuery.id, 10);
+
     const paginationLimit = 20;
+    const offset = parseInt(inlineQuery.id, 10);
+    const start = offset % paginationLimit;
+    const end = (start + 1) * paginationLimit;
+
     const results = await fetchFreepik({ message, translate: i18n, page: offset });
-    const response = results.slice(offset, (offset + 1) * paginationLimit);
+    const response = results.slice(start, end);
 
     answerInlineQuery(toInline(response), { next_offset: offset + paginationLimit });
 });
